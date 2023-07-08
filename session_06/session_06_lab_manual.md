@@ -44,7 +44,7 @@ create your own workflow as soon as you feel comfortable
    * Create a new html document called `index.html`
     * Inside `session_06` folder, create a folder called 'css', and a folder called 'js'. Your folder now should look like this:
 
-   ![img.png](img.png)
+   ![img.png](img/img.png)
 
 &nbsp;
 
@@ -54,7 +54,7 @@ create your own workflow as soon as you feel comfortable
    * Go to https://getbootstrap.com/docs/5.1/getting-started/download/. 
    Download the Compiled CSS and JS files. We will be only using the `bootstrap.css` file. Drag this file inside your `css` folder in your folder structure. Now your folder should it should look like this:
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
    * Instead of downloading the files manually, directly copy the following in side `<head>  </head>` tag in your `index.html` file:
 
 ```
