@@ -44,7 +44,7 @@ create your own workflow as soon as you feel comfortable
    * Create a new html document called `index.html`
     * Inside `session_06` folder, create a folder called 'css', and a folder called 'js'. Your folder now should look like this:
 
-   ![img.png](img.png)
+   ![img.png](img/img.png)
 
 &nbsp;
 
@@ -54,10 +54,10 @@ create your own workflow as soon as you feel comfortable
    * Go to https://getbootstrap.com/docs/5.1/getting-started/download/. 
    Download the Compiled CSS and JS files. We will be only using the `bootstrap.css` file. Drag this file inside your `css` folder in your folder structure. Now your folder should it should look like this:
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
    * Instead of downloading the files manually, directly copy the following in side `<head>  </head>` tag in your `index.html` file:
 
-```
+```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 ```
@@ -147,20 +147,18 @@ Of course, you want to do a little better than just writing some words into the 
   To include a link, the only think you have to do is to put some ```<a>``` tags around the text
    that should appear and function as a link.         
   
-    ```html
-        <a href="www.google.de">hello, world</a>
-    
-    ```
+```html
+<a href="www.google.de">hello, world</a>
+```
     
     Notice that you can style html elements using css. There are various ways how to apply styling but
  the most intuitive way might be to do it in the html file itself right inside the html element's
   tag. You can simply include the ```style``` attribute and write css code. Here's an example
    with some (horrific) styling:
-  
-  ```html
 
-    <a href="www.google.de" style="font-size: 10px; background-color: red">hello, world</a>
-  ```
+```html
+ <a href="www.google.de" style="font-size: 10px; background-color: red">hello, world</a>
+```
 
 ### 2.image
 
@@ -176,6 +174,7 @@ you get the idea - you just need to know what tag to use and what nuances you ne
  for when using this tag. Try to add a button to your website - use google, stack overflow, the w3
   schools' website or  the bootstrap documentation if you don't know where to start.
  
+
 ## Grid
 ### Structuring the DOM with Bootstrap Grid
    
