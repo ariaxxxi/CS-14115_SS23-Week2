@@ -128,7 +128,7 @@ document.querySelector("#my-text").innerHTML = 'changed the text';
 
 
 
-## 3) Lab & Tasks
+## 3) Tasks
 
 
 
@@ -140,9 +140,266 @@ This lab includes three activities and covers JS basics. It is intended to solid
 
 ![Lab 2 - Preview](img/week-03_lab_preview.png?raw=true "Lab 2 - Preview")
 
-### A short reiteration of the basic concepts of JavaScript (JS)
 
-#### Variables
+-----
+
+*For each individual activity below, create a separate html file.
+
+### Task I
+
+1. **Familiarize yourself with the JavaScript Web Console**
+
+   As we have already learned in the first lab, there are some developer tools in our web browsers that make programing a bit easier. Normally, we include JS code in HTML files and then open these files in the browser. But we can also use the *Console* to type JS code directy in the browser.
+
+	* Open your developer-tools and switch to the tab ***Console***
+
+	* Create a few variables and try out some mathematical operators to see how it works. The console accepts one line of code at a time.
+
+	* Here are some examples:
+
+	  ```javascript		
+      (1) let message = "I am learning JS"
+      (2) message
+      
+      (1) let cities = ["Tokio", "Berlin", "San Francisco"]
+      (2) cities[0]
+      (3) cities[2]
+      
+      (1) let numeric = 12
+      (2) numeric / (1 + 2)
+      ```
+
+   *If you need multiple lines (e.g. JSON object) you can write the code in an editor and copy it into the console. This is an easy and quick way to test out code. Furthermore, the console is an essential tool for debugging. We will give it a try soon, but first continue with step (2).*
+
+
+2. **Create a new HTML file and JS file and implement the data structure**
+
+   Create a new folder in your `session_07` directory named `activity_01`. Then create an HTML file,
+   named `index.html`. Then create a folder named `js` and create a JS file named `main.js`
+   inside. Link the JavaScript file in `index.html`. Including JS in a separate file is the
+   preferred method. Add the reference at the end of the `body` tag as shown in the example below:
+
+   ```html
+    <!doctype html>
+         <html>
+           <head>
+        <!-- title, meta info etc. -->
+           </head>
+        <body>
+        <!-- html -->
+        <!-- AT THE END OF THE BODY, RIGHT BEFORE THE END, INCLUDE ALL YOUR JS -->
+        <script type="text/javascript" src="js/main.js"></script>
+        </body>
+   ```
+
+3. **Create a JavaScript data structure**
+
+   Now it is your turn to apply your acquired knowledge! Come up with a *proper compound JS data structure* to store the following information and make sure that its values are simple and efficient.
+
+   &nbsp;
+
+   Let's assume that you have data for **three attractions** in an amusement park that we want to
+   store. Each amusement ride has several attributes:
+
+	- ID
+	- Name
+	- Price in USD
+
+   &nbsp;
+
+   Store the data structure in the variable `data` in `main.js`.
+
+   &nbsp;
+
+   *Make up the actual values for each of those attributes. We are mainly interested in the following: How would you store this data in code? Which data structure(s) would you use?  We suggest that you start with pen and paper to design your data structure (or your local code editor). Which JS data structure would you use (basic data types, arrays, objects, etc.)? Which data types (string, boolean, etc.) would you use to represent the data? Once you know how you want to implement it, continue to step (3).*
+
+
+4. **Write messages to the web console**
+
+   The console is an essential tool for debugging. It shows logged security alerts, warnings, errors, informational messages etc. When you are creating scripts, you can write your own debug messages to the console:
+
+   ```javascript
+   console.log("My debug message");
+       
+   let debugId = 12;
+   console.log("Another debug message with id: " + debugId);
+   ```
+
+   Use ```console.log()``` to print some information of your dataset:
+
+	* Name of the first amusement ride
+	* Price of the third amusement ride
+	* ID and price of the second ride.
+
+
+&nbsp;
+
+-----
+
+
+### Task II
+
+*In this exercise you should use the amusement ride data structure you created earlier and add two short functions to the JS file.*
+
+1. **Create a new function: doublePrices()**
+
+   This function takes your data structure as an input variable. You should loop through all the amusement rides, and modify their prices (*2). (Note: You will be modifying the original data here, but that is fine. You do not need to create a deep copy of the data.)
+
+   ```javascript
+   // Calling the function
+   let amusementRidesDouble = doublePrices(amusementRides);
+   
+   // Implementation of the function
+   function doublePrices(rides){
+       
+       // TODO: Modify data here ...
+       
+   }
+   ```
+
+   You can add a ```console.log(amusementRidesDouble);``` at the end to look at the result of your code.
+
+   > Pro-tip: In JS, when you pass a primitive type variable (e.g., string or number) to a function, it is passed by value. On the other hand, if you pass an object, it is passed by reference. To try out the difference, check out this [JSFiddle code snippet](https://jsfiddle.net/ywn5vno5/). If you don't know the difference between pass-by-value and pass-by-reference, don't worry about it for now. But you might want to come back to this eventually.
+
+   &nbsp;
+
+2. **Modify the function doublePrices() to double all prices, except for the second item in your list of amusement rides**
+
+   &nbsp;
+
+3. **Create a second function: debugAmusementRides()**
+
+   In this function, loop through the modified list of attractions and write the **name** and the new **price** for each item to the console.
+
+   ```javascript
+   // The + operator can be used to concatenate strings/variables.
+   let firstName = "John";
+   let lastName = "Doe";
+   let name = firstName + " " + lastName;
+   
+   console.log(name); 	// Returns: John Doe
+   ```
+   &nbsp;
+
+4. **Bonus Task: Changing the DOM with JS**
+
+   Now we want to display some attributes of our amusement rides directly on the website, not just the JS console. To do this, we first have to create a new HTML element and then fill the content of this element dynamically with JS.
+
+   The easiest way to modify the content of an HTML element is by using its *innerHTML* property. This implies that you have to create a string for the HTML snippet you want to insert first, and then set the *innerHTML* property. For example, you can create a new string variable and extend it in a for-loop, before you assign it to the *innerHTML property*.
+
+   Here is an example that you can copy and paste into your HTML file:
+
+   ```html
+   <div id="content-1"></div>
+   <div id="content-2"></div>
+   
+   <script type="text/javascript">
+       // Write HTML with JS
+       document.getElementById("content-1").innerHTML = '<h1>Headline</h1>...and some text';
+       
+       // Loop through array, build HTML block and finally display it on the page
+       let fruits = ["Orange", "Banana", "Apple"];
+       let result = '';
+       fruits.forEach((fruit, index) => {
+               result += fruits[index] + "<br/>"
+       })
+       document.getElementById("content-2").innerHTML = result;
+   </script>
+   ```
+   Note that this example includes the JS code directly in the HTML file. Usually it's preferrable to link to an external javascript file. Try it out!
+
+   Now it's your turn! Update the HTML with the following content:
+
+	* **Add a new HTML element to your document with a specific ID** (e.g. ```div```).
+	* **Create a new function** or duplicate debugAmusementRides() that loops through all amusement rides and **displays the name and the new prices on the website**.
+
+&nbsp;
+
+
+-----
+
+### Task III
+
+This activity summarizes most of the learned concepts of today's and yesterday's lab. It includes different aspects of HTML, CSS and JS and will result in a bar chart visualization.
+
+We will provide a template with a basic *HTML structure*, a *dataset* (stored in a JSON array) and a *complete JS function* that renders a bar chart with D3. Your primary tasks are data filtering and controlling the workflow. In the following labs we will introduce D3 and show you how to create these visualizations yourself.
+
+**Data:**
+
+- The dataset (provided with the code template) consists of 60 attractions around the world. Each attraction has the following properties:
+	-  ```Location``` *(name, city and country)*
+	-  ```Category``` *(theme park | water park | museum)*
+	-  ```Visitors``` *(annual visitors in 2013)*
+	-  ```Entry``` *(paid | free)*
+- The JSON array with objects is stored in the global variable ```attractionData```.
+- Data Source: TEA/AECOM 2013 Theme Index and Museum Index
+
+1. **Open the `Template` folder that was provided in the distribution code.**
+
+2. **Familiarize yourself with the provided HTML document: ```index.html```**
+
+   Look at the source code, its HTML elements, and which files (JS, CSS) are included.
+
+3. **Array filtering**
+
+    * You will find `Sort()` and `filter()` section useful in DOCUMENTATION below for this task.
+
+    * Open the JS file ```main.js``` (*js* folder). Most of the tasks you need to complete should be
+   implemented in the function: *dataFiltering()*.
+
+   We have included a template of the function, and have created a local variable ```attractions``` from the global variable and we have called the function right before. You should work with the local variable ```attractions``` - don't override the global one.
+
+   * → ***Filter the array: top 5 global attractions (based on annual visitors)***
+
+   * We want to show the *top five global attractions* with the most annual visitors in a bar chart. There are 60 attractions in the dataset, so you have to create a new array or modify the variable ```attractions```. *Suggestion: sort the JSON array descending by ```Visitors``` and then filter the array to get the first five rows.*
+
+
+5. **Call the function: renderBarChart(attractions)**
+
+	- This function will automatically render a bar chart with the top attractions in the div-container with the id: ```#chart-area```.
+	- You must include a JSON array with attractions as a parameter (array length: 5)
+	- If there is a problem, check the web console and try to debug your code (e.g., by using ```console.log()``` statements)
+	- If you are still in class, don't hesitate to ask TFs for help! Otherwise, you can use office hours!
+
+5. **Extend array filtering**
+
+   As you might have seen already, there is a *select-box* in the HTML document. You can select different categories but right now, nothing happens.
+
+   In the next task you should call a function *dataManipulation()* if someone changes the select-box and then, inside the function, filter the attractions by the selected category:
+
+	* Add the attribute ```onchange="dataFiltering()"``` to the select-box (in the HTML file). The
+	  function ```dataFiltering()``` will be automatically called whenever the user changes the value of the select box. However, you will need to create that function!
+	* In your JS file you can use the following code snippet to get the selected category. Make sure to change "SELECT-ID" to the ID of the select-box.
+
+	  ```javascript
+      let selectBox = document.getElementById("SELECT-ID");
+      let selectedValue = selectBox.value;
+      ```
+	  Make sure this part is working, by logging *selectedValue* in the console whenever the
+	  select-box selection has changed, before continuing.
+
+	* Before searching for the top attractions and calling *renderBarChart()*: check if the selected category is "all", otherwise filter the attractions by category.
+
+   *If everything has been configured correctly, the bar chart will be updated automatically after selecting a category.*
+
+&nbsp;
+
+-----
+
+### Bonus Activity (optional!)
+
+- **Add custom styles (CSS)**
+
+  We have included *Bootstrap* and a couple of CSS rules to style the bar chart. Add a new stylesheet or modify ```style.css``` to create an individual design.
+  To change the style of the D3 components you will have to add new elements to your css. D3 uses ```<svg>``` tags in the DOM, and you might want to look up properties like *fill* or *stroke*. The tooltip has the class ```tooltip``` in the DOM.
+  &nbsp;
+
+-----
+
+# DOCUMENTATION
+
+
+## Variables
 
 ```javascript
 // Variables in JS are loosely typed
@@ -161,9 +418,9 @@ let winter = true;
 ```
 
 
-#### Data Structures
+## 1. Data Structures
 
-##### Arrays
+### Arrays
 * Arrays can store a sequence of values, and contain any type of data. 
 * Use bracket notation ```[]``` to define or access an array.
 
@@ -194,7 +451,7 @@ let nestedNumbers = [[1, 2], [3, 4], [5, 6]];
 > You can do much more with arrays than shown here. Again, check out the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) if you have no experience with JavaScript or difficulties with some concepts. Arrays are very important for data visualization, so take the time to go through this at home!
 
 
-##### Objects
+### Objects
 
 * Objects are the second type of compound data types in JS.
 * Use curly brackets ```{}``` to define an object and list *properties* and *values*.
@@ -230,7 +487,7 @@ courses[1].id; 	// Returns: CS50
 // Keep in mind: [...] means array and {...} means object!
 ```
 
-##### JSON (JavaScript Object Notation)
+### JSON (JavaScript Object Notation)
 
 * JSON is a popular data-interchange format for APIs (application program interfaces) and therefore very important for our future tasks. 
 * It is basically a JS object, with the only difference being that the property names are surrounded by double quotation marks.
@@ -247,110 +504,13 @@ let course = {
 
 &nbsp;
 
------
-
-*For each individual activity below, create a separate html file.
-
-#### Activity I
- 
-1. **Familiarize yourself with the JavaScript Web Console**
-
-	As we have already learned in the first lab, there are some developer tools in our web browsers that make programing a bit easier. Normally, we include JS code in HTML files and then open these files in the browser. But we can also use the *Console* to type JS code directy in the browser.
-	
-	* Open your developer-tools and switch to the tab ***Console***
-	
-	* Create a few variables and try out some mathematical operators to see how it works. The console accepts one line of code at a time.
-
-	* Here are some examples:
-		
-		```javascript		
-		(1) let message = "I am learning JS"
-		(2) message
-		
-		(1) let cities = ["Tokio", "Berlin", "San Francisco"]
-		(2) cities[0]
-		(3) cities[2]
-		
-		(1) let numeric = 12
-		(2) numeric / (1 + 2)
-		```
-
-	*If you need multiple lines (e.g. JSON object) you can write the code in an editor and copy it into the console. This is an easy and quick way to test out code. Furthermore, the console is an essential tool for debugging. We will give it a try soon, but first continue with step (2).*
-
-
-2. **Create a new HTML file and JS file and implement the data structure**
-
-	Create a new folder in your `session_07` directory named `activity_01`. Then create an HTML file,
-   named `index.html`. Then create a folder named `js` and create a JS file named `main.js` 
-   inside. Link the JavaScript file in `index.html`. Including JS in a separate file is the 
-   preferred method. Add the reference at the end of the `body` tag as shown in the example below:
-	
-	```html
- 	<!doctype html>
-		  <html>
-		    <head>
- 		<!-- title, meta info etc. -->
-		    </head>
- 	    <body>
- 		<!-- html -->
- 		<!-- AT THE END OF THE BODY, RIGHT BEFORE THE END, INCLUDE ALL YOUR JS -->
- 		<script type="text/javascript" src="js/main.js"></script>
- 	    </body>
-	```
-
-3. **Create a JavaScript data structure**
-
-   Now it is your turn to apply your acquired knowledge! Come up with a *proper compound JS data structure* to store the following information and make sure that its values are simple and efficient.
-
-	&nbsp;
-
-   Let's assume that you have data for **three attractions** in an amusement park that we want to 
-   store. Each amusement ride has several attributes:
-
-	- ID
-	- Name
-	- Price in USD
-   
-    &nbsp;
-
-    Store the data structure in the variable `data` in `main.js`.
-   
-	&nbsp;
-
-   *Make up the actual values for each of those attributes. We are mainly interested in the following: How would you store this data in code? Which data structure(s) would you use?  We suggest that you start with pen and paper to design your data structure (or your local code editor). Which JS data structure would you use (basic data types, arrays, objects, etc.)? Which data types (string, boolean, etc.) would you use to represent the data? Once you know how you want to implement it, continue to step (3).*
-
-
-4. **Write messages to the web console**
-
-	The console is an essential tool for debugging. It shows logged security alerts, warnings, errors, informational messages etc. When you are creating scripts, you can write your own debug messages to the console:
-	
-	```javascript
-	console.log("My debug message");
-		
-	let debugId = 12;
-	console.log("Another debug message with id: " + debugId);
-	```
-	
-	Use ```console.log()``` to print some information of your dataset:
-	
-	* Name of the first amusement ride
-	* Price of the third amusement ride
-    * ID and price of the second ride.
-
-
-&nbsp;
-
------
-
-
-
 
 You should already be familiar with **control structures**, **loops** and **functions**. The following just shows some examples and the correct syntax for using those structures.
 
 
-#### Control Structures & Loops
+## 2. Control Structures & Loops
 
-##### IF-STATEMENT
+### if - STATEMENT
 
 ```javascript
 let numericData = 10;
@@ -370,7 +530,7 @@ let result = (numericData >= 10) ? "greater than or equal to 10" : "less than 10
 let result = (numericData % 2 === 0) ? "even" : "odd";
 ```
 
-##### FOR-LOOP
+### for - loop
 
 ```javascript
 // (1) Loop through a block of code 5 times (printing the value of i each time to the console)
@@ -408,7 +568,7 @@ arrayWithNames.forEach( (element, index) => {
 ![Lab 2 - For-Loops](img/cs14115-for-loop-examples.png?raw=true "Lab 2 - For-Loops")
 
 
-#### Functions
+## 3. Functions
 
 Here we list a few examples to show you the syntax for functions. In the following weeks you will learn more about anonymous functions, callbacks etc.
 
@@ -433,95 +593,13 @@ let temperature = "Current temperature: " + toCelsius(34) + " Celsius";
 
 &nbsp;
 
------
-
-#### Activity II
-
-*In this exercise you should use the amusement ride data structure you created earlier and add two short functions to the JS file.*
-
-1. **Create a new function: doublePrices()**
-
-	This function takes your data structure as an input variable. You should loop through all the amusement rides, and modify their prices (*2). (Note: You will be modifying the original data here, but that is fine. You do not need to create a deep copy of the data.)
-	
-	```javascript
-	// Calling the function
-	let amusementRidesDouble = doublePrices(amusementRides);
-	
-	// Implementation of the function
-	function doublePrices(rides){
-		
-		// TODO: Modify data here ...
-		
-	}
-	```
-	
-	You can add a ```console.log(amusementRidesDouble);``` at the end to look at the result of your code.
-	
-	> Pro-tip: In JS, when you pass a primitive type variable (e.g., string or number) to a function, it is passed by value. On the other hand, if you pass an object, it is passed by reference. To try out the difference, check out this [JSFiddle code snippet](https://jsfiddle.net/ywn5vno5/). If you don't know the difference between pass-by-value and pass-by-reference, don't worry about it for now. But you might want to come back to this eventually.
-	
-	&nbsp;
-
-2. **Modify the function doublePrices() to double all prices, except for the second item in your list of amusement rides**
-	
-	&nbsp;
-	
-3. **Create a second function: debugAmusementRides()**
-
-	In this function, loop through the modified list of attractions and write the **name** and the new **price** for each item to the console.
-	
-	```javascript
-	// The + operator can be used to concatenate strings/variables.
-	let firstName = "John";
-	let lastName = "Doe";
-	let name = firstName + " " + lastName;
-	
-	console.log(name); 	// Returns: John Doe
-	```
-	&nbsp;
-
-4. **Changing the DOM with JS**
-
-	Now we want to display some attributes of our amusement rides directly on the website, not just the JS console. To do this, we first have to create a new HTML element and then fill the content of this element dynamically with JS.
-	
-	The easiest way to modify the content of an HTML element is by using its *innerHTML* property. This implies that you have to create a string for the HTML snippet you want to insert first, and then set the *innerHTML* property. For example, you can create a new string variable and extend it in a for-loop, before you assign it to the *innerHTML property*.
-	
-	Here is an example that you can copy and paste into your HTML file:
-	
-	```html
-	<div id="content-1"></div>
-	<div id="content-2"></div>
-	
-	<script type="text/javascript">
-		// Write HTML with JS
-		document.getElementById("content-1").innerHTML = '<h1>Headline</h1>...and some text';
-		
-		// Loop through array, build HTML block and finally display it on the page
-		let fruits = ["Orange", "Banana", "Apple"];
-		let result = '';
-		fruits.forEach((fruit, index) => {
-        	    result += fruits[index] + "<br/>"
-    	})
-		document.getElementById("content-2").innerHTML = result;
-	</script>
-	```
-	Note that this example includes the JS code directly in the HTML file. Usually it's preferrable to link to an external javascript file. Try it out!
-	
-	Now it's your turn! Update the HTML with the following content:
-	
-	* **Add a new HTML element to your document with a specific ID** (e.g. ```div```).
-	* **Create a new function** or duplicate debugAmusementRides() that loops through all amusement rides and **displays the name and the new prices on the website**.
-
-&nbsp;
-
------
 
 
-### More JavaScript
 
 Here we introduce some more advanced JavaScript concepts, that will be very important once we start working with D3. Don't worry, we will reiterate over them with more examples in the next labs in connection with D3.
 
 
-#### Functions are Objects
+### Functions are Objects
 
 In JavaScript, functions are objects which can be *called*. They take arguments and they return values. But because of their object-like characteristics, they are also just values that can be stored in variables and passed on.
 
@@ -559,10 +637,13 @@ So that means, if you run the function in the person's scope (second example), y
 If this still seems confusing to you, you can read up on this on the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). We will also come back to this in later labs.
 
 
-#### Array Manipulation with higher-order functions
+##  4. Array Manipulation with higher-order functions
 
 JS offers several functions for fast array manipulation. These functions usually rely on concepts from functional programming and can be hard to grasp at the beginning. We will come back to them in more detail later, but below you find a first introduction.
 If you want to read up on higher-order functions, here is a [link](http://eloquentjavascript.net/05_higher_order.html).
+
+
+### Filter()
 
 The ***filter()*** method creates a new array with the elements that meet a condition implemented by the provided function.
 
@@ -572,16 +653,9 @@ The ***filter()*** method creates a new array with the elements that meet a cond
 let cities = ["Vienna", "Paris", "London", "London"];
 
 // Pass a function to cities.filter()
-let filteredCities = cities.filter(checkCity);
+let filteredCities = cities.filter((value,index) => { return el != "London"});
 
-// Implementation of passed function
-function checkCity(value) {
-  return value != "London";
-}
-
-filteredCities // Returns: ["Vienna", "Paris"]
-
-console.log(filteredCities);
+console.log(filteredCities); // Returns: ["Vienna", "Paris"]
 
 
 // ---- Filter Example 2 - Get all numbers which are >= 10 and have array indices > 3 ---- 
@@ -594,13 +668,10 @@ let filteredNumericData = numericData.filter( (value, index) => {
 	return (value >= 10) && (index > 3);
 });
 
-filteredNumericData // Returns: [60, 80]
-console.log(filteredNumericData);
-
+console.log(filteredNumericData); // Returns: [60, 80]
 ```
 
-For more information on ***filter()*** you can take a look at [this tutorial](http://adripofjavascript.com/blog/drips/filtering-arrays-with-array-filter.html).
-
+### Sort()
 
 The ***sort()*** method sorts the items in an array. No new array object will be created during execution.
 
@@ -632,6 +703,9 @@ products.sort( (a, b) => {
 	return b.price - a.price;
 });
 ```
+
+### Map()
+
 The ***map()*** method creates a new array with the results of calling a provided function on every element of the original array.
 
 ```javascript
@@ -666,82 +740,6 @@ expensiveProducts // Returns: [{ name: "laptop", price: 1600 }, { name: "phone",
 
 &nbsp;
 
------
-
-#### Activity III
-
-This activity summarizes most of the learned concepts of today's and yesterday's lab. It includes different aspects of HTML, CSS and JS and will result in a bar chart visualization.
-
-We will provide a template with a basic *HTML structure*, a *dataset* (stored in a JSON array) and a *complete JS function* that renders a bar chart with D3. Your primary tasks are data filtering and controlling the workflow. In the following labs we will introduce D3 and show you how to create these visualizations yourself.
-
-**Data:**
-
-- The dataset (provided with the code template) consists of 60 attractions around the world. Each attraction has the following properties:
-	-  ```Location``` *(name, city and country)*
-	-  ```Category``` *(theme park | water park | museum)*
-	-  ```Visitors``` *(annual visitors in 2013)*
-	-  ```Entry``` *(paid | free)*
-- The JSON array with objects is stored in the global variable ```attractionData```.
-- Data Source: TEA/AECOM 2013 Theme Index and Museum Index
-
-1. **Open the `Template` folder that was provided in the distribution code.**
-    
-2. **Familiarize yourself with the provided HTML document: ```index.html```**
-
-	Look at the source code, its HTML elements, and which files (JS, CSS) are included.
-
-3. **Array filtering**
-
-	Open the JS file ```main.js``` (*js* folder). Most of the tasks you need to complete should be 
-   implemented in the function: *dataFiltering()*.
-	
-	We have included a template of the function, and have created a local variable ```attractions``` from the global variable and we have called the function right before. You should work with the local variable ```attractions``` - don't override the global one.
-	
-	→ ***Filter the array: top 5 global attractions (based on annual visitors)***
-	
-	We want to show the *top five global attractions* with the most annual visitors in a bar chart. There are 60 attractions in the dataset, so you have to create a new array or modify the variable ```attractions```. *Suggestion: sort the JSON array descending by ```Visitors``` and then filter the array to get the first five rows.*
-	
-4. **Call the function: renderBarChart(attractions)**
-
-	- This function will automatically render a bar chart with the top attractions in the div-container with the id: ```#chart-area```.
-	- You must include a JSON array with attractions as a parameter (array length: 5)
-	- If there is a problem, check the web console and try to debug your code (e.g., by using ```console.log()``` statements)
-	- If you are still in class, don't hesitate to ask TFs for help! Otherwise, you can use Piazza or office hours!
-
-5. **Extend array filtering**
-
-	As you might have seen already, there is a *select-box* in the HTML document. You can select different categories but right now, nothing happens.
-	
-	In the next task you should call a function *dataManipulation()* if someone changes the select-box and then, inside the function, filter the attractions by the selected category:
-	
-	* Add the attribute ```onchange="dataFiltering()"``` to the select-box (in the HTML file). The 
-	  function ```dataFiltering()``` will be automatically called whenever the user changes the value of the select box. However, you will need to create that function!
-	* In your JS file you can use the following code snippet to get the selected category. Make sure to change "SELECT-ID" to the ID of the select-box.
-
-		```javascript
-		let selectBox = document.getElementById("SELECT-ID");
-		let selectedValue = selectBox.value;
-		```
-		Make sure this part is working, by logging *selectedValue* in the console whenever the 
-	  select-box selection has changed, before continuing.
-
-	* Before searching for the top attractions and calling *renderBarChart()*: check if the selected category is "all", otherwise filter the attractions by category.
-
-	*If everything has been configured correctly, the bar chart will be updated automatically after selecting a category.*
-
-&nbsp;
-
------
-
-####Bonus Activity (optional!)
-
-- **Add custom styles (CSS)**
-
-	We have included *Bootstrap* and a couple of CSS rules to style the bar chart. Add a new stylesheet or modify ```style.css``` to create an individual design.
-	To change the style of the D3 components you will have to add new elements to your css. D3 uses ```<svg>``` tags in the DOM, and you might want to look up properties like *fill* or *stroke*. The tooltip has the class ```tooltip``` in the DOM.
-&nbsp;
-
------
 
 In the last activity you have implemented a function which reacts to the user input (changing a select-box value) and updates the chart immediately. So that means, you have done everything, apart from drawing the bars, to create an interactive data visualization. Next week, we will start with the JS library D3 and you will learn how to draw these SVG charts yourself.
 &nbsp;
