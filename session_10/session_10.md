@@ -42,7 +42,7 @@ We seccessfully created the map view and bar view from our previous session. Tod
 
 ----
 
-![Preview](md/cs171_w8_hw_map.png?raw=true "D3 Projections")	
+![Preview](img/md/cs171_w8_hw_map.png?raw=true "D3 Projections")	
 
 ## Task I -  MapVis
 
@@ -107,7 +107,7 @@ We seccessfully created the map view and bar view from our previous session. Tod
 
 
 
-![Preview](md/cs171_w8_hw_bars.png?raw=true "D3 Projections")
+![Preview](img/md/cs171_w8_hw_bars.png?raw=true "D3 Projections")
 
 ## Task II -  BarVis
 

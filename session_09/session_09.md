@@ -1,7 +1,7 @@
 
 # Session 09
 
-![Preview](md/cs171_w8_hw_preview.png?raw=true "D3 Projections")
+![Preview](img/md/cs171_w8_hw_preview.png?raw=true "D3 Projections")
 
 
 ## 1) Visualizing Covid Data (10 points)
@@ -52,7 +52,7 @@ his client by **Friday, July 7, 11:59 am (EST)**.
 
 #### Template
 
-![W08HW-templatePreview](md/cs171_w8_hw_template.png?raw=true "W08HW-templatePreview")
+![W08HW-templatePreview](img/md/cs171_w8_hw_template.png?raw=true "W08HW-templatePreview")
 
 Before Fraya left to pursue her dream to live off-grid in a lighthouse in
  Iceland, she finished some mayor parts of the projects. Most prominently, she created: 
