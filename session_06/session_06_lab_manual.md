@@ -170,6 +170,14 @@ you get the idea - you just need to know what tag to use and what nuances you ne
  for when using this tag. Try to add a button to your website - use google, stack overflow, the w3
   schools' website or  the bootstrap documentation if you don't know where to start.
  
+## CSS
+
+`style.css`file is usually created in the `css` folder. Link your `style.css` file to your `index.html` file by having this line in `<head>`:
+
+```html
+<link rel="stylesheet" href="./css/style.css">
+```
+
 ## Grid
 ### Structuring the DOM with Bootstrap Grid
    

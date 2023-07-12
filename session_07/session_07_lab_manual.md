@@ -134,11 +134,8 @@ document.querySelector("#my-text").innerHTML = 'changed the text';
 
 *From now on, and in all upcoming labs we will use the common abbreviation JS for the term JavaScript.*
 
-This lab includes three activities and covers JS basics. It is intended to solidify your understanding of JS so that you are able to write your own code in upcoming exercises. If you already know JS well, feel free to skim the text and jump right to the activities. However, if you are new to JS or need a refresher, make sure to read the text closely!
 
-*The result of this lab may look like the following screenshot. Among other things, you will work with data from amusement parks and museums and do some array manipulations and filtering. At the end you will use JS to call a function that will render a pre-configured bar chart.*
 
-![Lab 2 - Preview](img/week-03_lab_preview.png?raw=true "Lab 2 - Preview")
 
 
 -----
@@ -147,32 +144,36 @@ This lab includes three activities and covers JS basics. It is intended to solid
 
 ### Task I
 
-1. **Familiarize yourself with the JavaScript Web Console**
+1.  **Familiarize yourself with the JavaScript Web Console**
 
    As we have already learned in the first lab, there are some developer tools in our web browsers that make programing a bit easier. Normally, we include JS code in HTML files and then open these files in the browser. But we can also use the *Console* to type JS code directy in the browser.
 
-	* Open your developer-tools and switch to the tab ***Console***
+* Open your developer-tools and switch to the tab ***Console***
 
-	* Create a few variables and try out some mathematical operators to see how it works. The console accepts one line of code at a time.
+* Create a few variables and try out some mathematical operators to see how it works. The console accepts one line of code at a time.
 
-	* Here are some examples:
+* Here are some examples:
 
-	  ```javascript		
-      (1) let message = "I am learning JS"
-      (2) message
+  ```javascript		
+  (1) let message = "I am learning JS"
+  (2) message
       
-      (1) let cities = ["Tokio", "Berlin", "San Francisco"]
-      (2) cities[0]
-      (3) cities[2]
+  (1) let cities = ["Tokio", "Berlin", "San Francisco"]
+  (2) cities[0]
+  (3) cities[2]
       
-      (1) let numeric = 12
-      (2) numeric / (1 + 2)
-      ```
+  (1) let numeric = 12
+  (2) numeric / (1 + 2)
+  ```
 
-   *If you need multiple lines (e.g. JSON object) you can write the code in an editor and copy it into the console. This is an easy and quick way to test out code. Furthermore, the console is an essential tool for debugging. We will give it a try soon, but first continue with step (2).*
+   *If you need multiple lines (e.g. JSON object) you can write the code in an editor and copy it into the console. This is an easy and quick way to test out code. Furthermore, the console is an essential tool for debugging. *
+
+-----
 
 
-2. **Create a new HTML file and JS file and implement the data structure**
+### Task II
+
+1. **Create a new HTML file and JS file and implement the data structure**
 
    Create a new folder in your `session_07` directory named `activity_01`. Then create an HTML file,
    named `index.html`. Then create a folder named `js` and create a JS file named `main.js`
@@ -192,7 +193,7 @@ This lab includes three activities and covers JS basics. It is intended to solid
         </body>
    ```
 
-3. **Create a JavaScript data structure**
+2. **Create a JavaScript data structure**
 
    Now it is your turn to apply your acquired knowledge! Come up with a *proper compound JS data structure* to store the following information and make sure that its values are simple and efficient.
 
@@ -214,7 +215,7 @@ This lab includes three activities and covers JS basics. It is intended to solid
    *Make up the actual values for each of those attributes. We are mainly interested in the following: How would you store this data in code? Which data structure(s) would you use?  We suggest that you start with pen and paper to design your data structure (or your local code editor). Which JS data structure would you use (basic data types, arrays, objects, etc.)? Which data types (string, boolean, etc.) would you use to represent the data? Once you know how you want to implement it, continue to step (3).*
 
 
-4. **Write messages to the web console**
+3. **Write messages to the web console**
 
    The console is an essential tool for debugging. It shows logged security alerts, warnings, errors, informational messages etc. When you are creating scripts, you can write your own debug messages to the console:
 
@@ -234,14 +235,8 @@ This lab includes three activities and covers JS basics. It is intended to solid
 
 &nbsp;
 
------
 
-
-### Task II
-
-*In this exercise you should use the amusement ride data structure you created earlier and add two short functions to the JS file.*
-
-1. **Create a new function: doublePrices()**
+4. **Create a new function: doublePrices()**
 
    This function takes your data structure as an input variable. You should loop through all the amusement rides, and modify their prices (*2). (Note: You will be modifying the original data here, but that is fine. You do not need to create a deep copy of the data.)
 
@@ -267,58 +262,16 @@ This lab includes three activities and covers JS basics. It is intended to solid
 
    &nbsp;
 
-3. **Create a second function: debugAmusementRides()**
 
-   In this function, loop through the modified list of attractions and write the **name** and the new **price** for each item to the console.
 
-   ```javascript
-   // The + operator can be used to concatenate strings/variables.
-   let firstName = "John";
-   let lastName = "Doe";
-   let name = firstName + " " + lastName;
-   
-   console.log(name); 	// Returns: John Doe
-   ```
-   &nbsp;
-
-4. **Bonus Task: Changing the DOM with JS**
-
-   Now we want to display some attributes of our amusement rides directly on the website, not just the JS console. To do this, we first have to create a new HTML element and then fill the content of this element dynamically with JS.
-
-   The easiest way to modify the content of an HTML element is by using its *innerHTML* property. This implies that you have to create a string for the HTML snippet you want to insert first, and then set the *innerHTML* property. For example, you can create a new string variable and extend it in a for-loop, before you assign it to the *innerHTML property*.
-
-   Here is an example that you can copy and paste into your HTML file:
-
-   ```html
-   <div id="content-1"></div>
-   <div id="content-2"></div>
-   
-   <script type="text/javascript">
-       // Write HTML with JS
-       document.getElementById("content-1").innerHTML = '<h1>Headline</h1>...and some text';
-       
-       // Loop through array, build HTML block and finally display it on the page
-       let fruits = ["Orange", "Banana", "Apple"];
-       let result = '';
-       fruits.forEach((fruit, index) => {
-               result += fruits[index] + "<br/>"
-       })
-       document.getElementById("content-2").innerHTML = result;
-   </script>
-   ```
-   Note that this example includes the JS code directly in the HTML file. Usually it's preferrable to link to an external javascript file. Try it out!
-
-   Now it's your turn! Update the HTML with the following content:
-
-	* **Add a new HTML element to your document with a specific ID** (e.g. ```div```).
-	* **Create a new function** or duplicate debugAmusementRides() that loops through all amusement rides and **displays the name and the new prices on the website**.
-
-&nbsp;
 
 
 -----
 
 ### Task III
+
+![Lab 2 - Preview](img/week-03_lab_preview.png?raw=true "Lab 2 - Preview")
+
 
 This activity summarizes most of the learned concepts of today's and yesterday's lab. It includes different aspects of HTML, CSS and JS and will result in a bar chart visualization.
 
