@@ -49,13 +49,7 @@ create your own workflow as soon as you feel comfortable
 &nbsp;
 
 2. **Add bootstrap.css, bootstrap.js and all necessary dependencies**
-    There are two ways to do so:
-
-   * Go to https://getbootstrap.com/docs/5.1/getting-started/download/. 
-   Download the Compiled CSS and JS files. We will be only using the `bootstrap.css` file. Drag this file inside your `css` folder in your folder structure. Now your folder should it should look like this:
-
-![img_1.png](img/img_1.png)
-   * Instead of downloading the files manually, directly copy the following in side `<head>  </head>` tag in your `index.html` file:
+   * Directly copy the following in side `<head>  </head>` tag in your `index.html` file:
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -174,6 +168,16 @@ you get the idea - you just need to know what tag to use and what nuances you ne
  for when using this tag. Try to add a button to your website - use google, stack overflow, the w3
   schools' website or  the bootstrap documentation if you don't know where to start.
  
+<<<<<<< HEAD
+=======
+## CSS
+
+`style.css`file is usually created in the `css` folder. Link your `style.css` file to your `index.html` file by having this line in `<head>`:
+
+```html
+<link rel="stylesheet" href="./css/style.css">
+```
+>>>>>>> 3ca305d7f25f54526ef0fe5db282bc32ae7bf6a6
 
 ## Grid
 ### Structuring the DOM with Bootstrap Grid
