@@ -2,6 +2,7 @@
 
 ### Learning Objectives
 
+- Getting started with D3.js
 - Be able to differentiate between *scales* and *axes*
 - Understand the concept of *input domains* and *output ranges*
 - Know how to create scale functions in D3
@@ -11,6 +12,10 @@
 
 ----
 
+To import d3 library, include this code in `<body> </body>` in your html file:
+```html
+<script src="https://d3js.org/d3.v6.min.js"></script>
+```
 
 ## 0)  Understanding Session 7+
 
