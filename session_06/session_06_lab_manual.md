@@ -169,7 +169,6 @@ you get the idea - you just need to know what tag to use and what nuances you ne
   schools' website or  the bootstrap documentation if you don't know where to start.
  
 
-=======
 ## CSS
 
 `style.css`file is usually created in the `css` folder. Link your `style.css` file to your `index.html` file by having this line in `<head>`:
@@ -177,7 +176,6 @@ you get the idea - you just need to know what tag to use and what nuances you ne
 ```html
 <link rel="stylesheet" href="./css/style.css">
 ```
->>>>>>> 3ca305d7f25f54526ef0fe5db282bc32ae7bf6a6
 
 ## Grid
 ### Structuring the DOM with Bootstrap Grid
