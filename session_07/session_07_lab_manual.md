@@ -173,25 +173,10 @@ document.querySelector("#my-text").innerHTML = 'changed the text';
 
 ### Task II
 
-1. **Create a new HTML file and JS file and implement the data structure**
+1. **Open the template**
 
-   Create a new folder in your `session_07` directory named `activity_02`. Then create an HTML file,
-   named `index.html`. Then create a folder named `js` and create a JS file named `main.js`
-   inside. Link the JavaScript file in `index.html`. Including JS in a separate file is the
-   preferred method. Add the reference at the end of the `body` tag as shown in the example below:
+   We already create a folder in your `session_07` directory named `activity_02`. 
 
-   ```html
-    <!doctype html>
-         <html>
-           <head>
-        <!-- title, meta info etc. -->
-           </head>
-        <body>
-        <!-- html -->
-        <!-- AT THE END OF THE BODY, RIGHT BEFORE THE END, INCLUDE ALL YOUR JS -->
-        <script type="text/javascript" src="js/main.js"></script>
-        </body>
-   ```
 
 2. **Create a JavaScript data structure**
 
