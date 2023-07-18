@@ -41,6 +41,10 @@ body {
 
 .login-box a:hover {
  /*todo*/
+    background: #03e9f4;
+    color: white;
+    border-radius:5px;
+    box-shadow: 0 0 50px #03e9f4;
 }
 
 

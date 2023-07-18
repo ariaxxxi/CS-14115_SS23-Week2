@@ -175,7 +175,7 @@ document.querySelector("#my-text").innerHTML = 'changed the text';
 
 1. **Create a new HTML file and JS file and implement the data structure**
 
-   Create a new folder in your `session_07` directory named `activity_01`. Then create an HTML file,
+   Create a new folder in your `session_07` directory named `activity_02`. Then create an HTML file,
    named `index.html`. Then create a folder named `js` and create a JS file named `main.js`
    inside. Link the JavaScript file in `index.html`. Including JS in a separate file is the
    preferred method. Add the reference at the end of the `body` tag as shown in the example below:

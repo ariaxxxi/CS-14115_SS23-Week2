@@ -1,0 +1,30 @@
+.container{
+    display:grid;
+    place-items: center;
+    height:100vh;
+}
+
+.text-box{
+    display:inline-block;
+}
+
+.text{
+    font-size:80px;
+    font-family: monospace;
+    border-right:10px solid;
+    border-color:black;
+    white-space:nowrap;
+    overflow:hidden;
+    width:100%;
+    animation:
+        typing 1s steps(13),
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {border-color: transparent}
+}
+
+@keyframes  typing{
+    from {width:0}
+}
