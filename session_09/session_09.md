@@ -73,10 +73,10 @@ Having attended a D3 choropleth bootcamp recently, you think that you're well-eq
 
 ## Task Overview
 
-1. **Download the template**
+1. **Open the template**
 
-	Download the template from canvas: [Template.zip](https://canvas.harvard.edu/courses/119923/files/17738087/download?download_frd=1)
-	
+    We have created the template in `Template_09` folder in your `Session_09` folder
+
 	&nbsp;
 	
 2.  **Familiarize yourself with the provided framework and the dataset**

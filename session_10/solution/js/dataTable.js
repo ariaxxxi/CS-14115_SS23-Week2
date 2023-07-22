@@ -23,12 +23,12 @@ class DataTable {
         tableObject.thead = tableObject.table.append("thead")
         tableObject.thead.html(
             `<tr>
-                <th scope="col">State</th>
-                <th scope="col">Population</th>
-                <th scope="col">New Cases (abs)</th>
-                <th scope="col">New Cases (rel)</th>
-                <th scope="col">New Deaths (abs)</th>
-                <th scope="col">New Deaths (rel)</th>
+                <th scope="col"  style="background-color:whitesmoke; font-family: Avenir">State</th>
+                <th scope="col"  style="background-color:whitesmoke; font-family: Avenir">Population</th>
+                <th scope="col"  style="background-color:whitesmoke; font-family: Avenir">New Cases (abs)</th>
+                <th scope="col"  style="background-color:whitesmoke; font-family: Avenir">New Cases (rel)</th>
+                <th scope="col"  style="background-color:whitesmoke; font-family: Avenir">New Deaths (abs)</th>
+                <th scope="col"  style="background-color:whitesmoke; font-family: Avenir">New Deaths (rel)</th>
             </tr>`
         )
 
@@ -129,12 +129,12 @@ class DataTable {
         tableObject.stateInfo.forEach(state => {
             let row = tableObject.tbody.append("tr")
             row.html(
-                `<td>${state.state}</td>
-                <td>${state.population}</td>
-                <td>${state.absCases}</td>
-                <td>${state.absDeaths}</td>
-                <td>${state.relCases}</td>
-                <td>${state.relDeaths}</td>`
+                `<td style="background-color:whitesmoke; font-family: Avenir">${state.state}</td>
+                <td style="background-color:whitesmoke; font-family: Avenir">${state.population}</td>
+                <td style="background-color:whitesmoke; font-family: Avenir">${state.absCases}</td>
+                <td style="background-color:whitesmoke; font-family: Avenir">${state.absDeaths}</td>
+                <td style="background-color:whitesmoke; font-family: Avenir">${state.relCases}</td>
+                <td style="background-color:whitesmoke; font-family: Avenir">${state.relDeaths}</td>`
             )
             row.on('mouseover', function () {
                 console.log(state.state)

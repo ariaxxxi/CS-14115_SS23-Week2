@@ -77,9 +77,12 @@
                                 <div class="col-8">
                                     <div class="row justify-content-center" style="height: 100%">
                                         <!-- ################################################################## -->
-                                        <!-- TODO - Enable category selection -->
-                                        <p class="align-self-center">TODO</p>
-
+                                        <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">
+                                            <option value="absCases" selected>Cases (absolute)</option>
+                                            <option value="absDeaths">Deaths (absolute)</option>
+                                            <option value="relCases">Cases (relative to population)</option>
+                                            <option value="relDeaths">Deaths (relative to population)</option>
+                                        </select>
 
                                         <!-- ################################################################## -->
                                     </div>

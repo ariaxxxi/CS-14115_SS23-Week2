@@ -197,8 +197,8 @@ class BrushVis {
         vis.pathOne.datum(vis.preProcessedData)
             .transition().duration(400)
             .attr("d", vis.area)
-            .attr("fill", "#428A8D")
-            .attr("stroke", "#136D70")
+            .attr("fill", "rgba(90,175,179,0.64)")
+            .attr("stroke", "rgba(19,109,112,0.62)")
             .attr("clip-path", "url(#clip)");
 
 
@@ -206,7 +206,7 @@ class BrushVis {
         vis.pathTwo.datum(vis.dataPathTwo)
             .transition().duration(400)
             .attr("d", vis.area)
-            .attr('fill', 'rgba(255,0,0,0.47)')
+            .attr('fill', 'rgb(255,129,129)')
             .attr("stroke", "#darkred")
             .attr("clip-path", "url(#clip)");
 

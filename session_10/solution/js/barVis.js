@@ -41,7 +41,7 @@ class BarVis {
         vis.svg.append('g')
             .attr('class', 'title bar-title')
             .append('text')
-            .text('Title for Barchart')
+            // .text('Barchat')
             .attr('transform', `translate(${vis.width / 2}, 10)`)
             .attr('text-anchor', 'middle');
 
@@ -174,6 +174,16 @@ class BarVis {
         vis.xAxisGroup.transition().duration(500).call(d3.axisBottom(vis.xScale))
         vis.yAxisGroup.transition().duration(500).call(d3.axisLeft(vis.yScale))
 
+        vis.xAxisGroup.select(".domain")
+            .attr("stroke","grey")
+            .attr("stroke-width","0.5")
+            .attr("opacity",".6");
+
+        vis.yAxisGroup.select(".domain")
+            .attr("stroke","grey")
+            .attr("stroke-width","0.5")
+            .attr("opacity",".6");
+
         // draw bars
         vis.bars = vis.svg.selectAll("rect").data(vis.topTenData, d => d.state)
 
@@ -187,8 +197,7 @@ class BarVis {
 
                 // update color of hovered state
                 d3.select(this)
-                    .attr('stroke-width', 1)
-                    .attr('fill', 'rgba(255,0,0,0.47)')
+                    .attr('fill', 'rgb(255,129,129)')
                     .style('opacity', 1)
 
                 // update tooltip
@@ -197,13 +206,13 @@ class BarVis {
                     .style("left", event.pageX + 20 + "px")
                     .style("top", event.pageY + "px")
                     .html(`
-                        <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
-                            <h3>${d.state}<h3>
-                            <h4> Population: ${d.population}</h4>
-                            <h4> Cases (absolute): ${d.absCases}</h4>
-                            <h4> Deaths (absolute): ${d.absDeaths}</h4>
-                            <h4> Cases (relative): ${d.relCases.toFixed(2)}%</h4>
-                            <h4> Deaths (relative): ${d.relDeaths.toFixed(2)}%</h4>
+                        <div style=" border-radius: 5px; background: whitesmoke; padding: 20px; box-shadow:4px 4px 8px 4px rgba(184,184,184,0.32)">
+                            <h3 style="font-size:16px;font-family: Avenir">${d.state}<h3>
+                            <h4 style="font-size:10px;font-family: Avenir"> Population: ${d.population}</h4>
+                            <h4 style="font-size:10px;font-family: Avenir"> Cases (absolute): ${d.absCases}</h4>
+                            <h4 style="font-size:10px;font-family: Avenir"> Deaths (absolute): ${d.absDeaths}</h4>
+                            <h4 style="font-size:10px;font-family: Avenir"> Cases (relative): ${d.relCases.toFixed(2)}%</h4>
+                            <h4 style="font-size:10px;font-family: Avenir"> Deaths (relative): ${d.relDeaths.toFixed(2)}%</h4>
                         </div>`);
             })
             .on('mouseout', function (event, d) {

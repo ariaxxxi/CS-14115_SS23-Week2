@@ -39,7 +39,7 @@ class MapVis {
             .attr('class', 'title')
             .attr('id', 'map-title')
             .append('text')
-            .text('Title for Map')
+            .text('Map View')
             .attr('transform', `translate(${vis.width / 2}, 20)`)
             .attr('text-anchor', 'middle');
 
@@ -248,16 +248,12 @@ class MapVis {
 
                 // update color of hovered state
                 d3.select(this)
-                    .attr('stroke', 'darkred')
-                    .attr('stroke-width', 2)
-                    .attr('fill', 'rgba(255,0,0,0.47)')
+                    .attr('fill', 'rgb(255,129,129)')
                     .style('opacity', 1)
 
-                // Link: update color in bar chart
+                // update color also
                 d3.select("." + selectedState)
-                    .attr('stroke', 'darkred')
-                    .attr('stroke-width', 1)
-                    .attr('fill', 'rgba(255,0,0,0.47)')
+                    .attr('fill', 'rgb(255,129,129)')
                     .style('opacity', 1)
 
                 // update tooltip
@@ -266,13 +262,13 @@ class MapVis {
                     .style("left", event.pageX + 20 + "px")
                     .style("top", event.pageY + "px")
                     .html(`
-                        <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
-                            <h3>${stateData.state}<h3>
-                            <h4> Population: ${stateData.population}</h4>
-                            <h4> Cases (absolute): ${stateData.absCases}</h4>
-                            <h4> Deaths (absolute): ${stateData.absDeaths}</h4>
-                            <h4> Cases (relative): ${stateData.relCases.toFixed(2)}%</h4>
-                            <h4> Deaths (relative): ${stateData.relDeaths.toFixed(2)}%</h4>
+                        <div style=" border-radius: 5px; background: whitesmoke; padding: 20px; box-shadow:4px 4px 8px 4px rgba(184,184,184,0.32)">
+                            <h4 style="font-size:16px;font-family: Avenir">${stateData.state}<h4>
+                            <p style="font-size:10px;font-family: Avenir"> Population: ${stateData.population}</p>
+                            <p style="font-size:10px;font-family: Avenir"> Cases (absolute): ${stateData.absCases}</p>
+                            <p style="font-size:10px;font-family: Avenir"> Deaths (absolute): ${stateData.absDeaths}</p>
+                            <p style="font-size:10px;font-family: Avenir"> Cases (relative): ${stateData.relCases.toFixed(2)}%</p>
+                            <p style="font-size:10px;font-family: Avenir"> Deaths (relative): ${stateData.relDeaths.toFixed(2)}%</p>
                         </div>`);
             })
             .on('mouseout', function (event, d) {
@@ -304,7 +300,7 @@ class MapVis {
                     .attr('stroke-width', 1)
                     .style('opacity', 1)
 
-                // update bar color
+                // update color also
                 d3.select("." + tmpState)
                     .attr('stroke-width', .1)
                     .attr('stoke', '#000000')
@@ -343,8 +339,9 @@ class MapVis {
                    return radius})
                .attr("cx", d => vis.path.centroid(d)[0]*vis.zoom)
                .attr("cy", d => vis.path.centroid(d)[1]*vis.zoom)
-               .attr("fill", "rgba(250,179,67,0.44)")
-               .attr("stroke", "black")
+               .attr("fill", "rgb(255,129,129)")
+               .attr('opacity',0.7)
+
     }
 
 

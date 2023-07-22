@@ -90,9 +90,9 @@ class BrushVis {
                 myDataTable.wrangleData();
 
                 // TODO - brushing should trigger wrangleData() methods for each visualization
-                // myMapVis.wrangleData();
-                // myBarVisOne.wrangleData();
-                // myBarVisTwo.wrangleData();
+                myMapVis.wrangleData();
+                myBarVisOne.wrangleData();
+                myBarVisTwo.wrangleData();
 
             });
 

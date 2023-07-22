@@ -11,14 +11,18 @@ let myDataTable,
 
 let selectedTimeRange = [];
 let selectedState = '';
+let selectedCategory = document.getElementById("categorySelector").value
 
 //####################################################################################################
 //  TODO | Task MapVis-9 : Enable category selection
 
-
-
-
-
+function categoryChange(){
+    selectedCategory = document.getElementById("categorySelector").value
+    console.log(selectedCategory)
+    myMapVis.wrangleData()
+    myBarVisOne.wrangleData()
+    myBarVisTwo.wrangleData()
+}
 
 
 //####################################################################################################
@@ -50,13 +54,13 @@ function initMainPage(dataArray) {
 
     // ####################################################
     //  TODO | Task MapVis-1 :  init mapVis class instance
-    // myMapVis = new MapVis('mapDiv', dataArray[0], ...
+    myMapVis = new MapVis('mapDiv', dataArray[0], dataArray[1], dataArray[2]);
 
 
 
     //  TODO | Task BarVis-1 :  init barVis class instance
-    // myBarVisOne = new BarVis('barDiv', ...
-    // myBarVisTwo = new BarVis('...
+    myBarVisOne = new BarVis('barDiv', dataArray[1], dataArray[2], true);
+    myBarVisTwo = new BarVis('barTwoDiv', dataArray[1], dataArray[2], false);
 
 
     // init brush

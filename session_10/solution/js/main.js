@@ -37,7 +37,7 @@ let carousel = new bootstrap.Carousel(document.getElementById('stateCarousel'), 
 // on button click switch view
 function switchView() {
     carousel.next();
-    document.getElementById('switchView').innerHTML === 'map view' ? document.getElementById('switchView').innerHTML = 'table view' : document.getElementById('switchView').innerHTML = 'map view';
+    document.getElementById('switchView').innerHTML === 'Map View' ? document.getElementById('switchView').innerHTML = 'Table View' : document.getElementById('switchView').innerHTML = 'Map View';
 }
 
 

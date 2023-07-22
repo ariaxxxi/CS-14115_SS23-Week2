@@ -8,9 +8,11 @@ class BarVis {
     // ####################################################
     // TODO | Task BarVis-2 : Set up the constructor method for class architecture
     // You can check out how we did it in mapVis.js.
-    constructor(p) {
-
-
+    constructor(parentElement ,covidData, usaData, isDescending) {
+        this.parentElement = parentElement;
+        this.covidData = covidData;
+        this.usaData = usaData;
+        this.isDescending = isDescending;
         // parse date method
         this.parseDate = d3.timeParse("%m/%d/%Y");
 
@@ -50,10 +52,12 @@ class BarVis {
         // TODO | Task BarVis-3 : Set up axis svg group for barchart
         // Feel free to reference how we do it in barChart.js in session_07
 
+        vis.xAxisGroup = vis.svg.append('g')
+            .attr('class','axis x-axis')
+            .attr('transform', `translate (0,${vis.height})`);
 
-
-
-
+        vis.yAxisGroup = vis.svg.append('g')
+            .attr('class','axis y-axs')
 
 
         this.wrangleData();
@@ -129,12 +133,17 @@ class BarVis {
         // maybe a boolean in the constructor could come in handy ?
         //if descending is true, sort... else, sort...
 
+        if (vis.isDescending){
+            vis.sortedData = vis.stateInfo.sort((a,b) => { return b[selectedCategory] - a[selectedCategory] })
+        }
+        else{
+            vis.sortedData = vis.stateInfo.sort((a,b) => { return a[selectedCategory] - b[selectedCategory] })
+        }
 
+        vis.topTenData = vis.sortedData.filter((el,i) => {return i<10})
         //filter top 10...
 
-
-
-
+        console.log(vis.topTenData)
 
         vis.updateVis()
 
@@ -147,12 +156,67 @@ class BarVis {
         // TODO: Draw the bar chart: rect, axis...
         // Feel free to reference how we do it in barChart.js in session_07
 
+        vis.xScale = d3.scaleBand()
+            .domain(d3.map(vis.topTenData, d => d.state))
+            .range([0,vis.width])
+            .padding(0.1)
+
+        vis.yScale = d3.scaleLinear()
+            .domain([0,d3.max(vis.topTenData, d=> d[selectedCategory])])
+            .range([vis.height, 0])
+
+        vis.bar = vis.svg.selectAll('rect')
+            .data(vis.topTenData, d => d.state)
+
+        let color = ''
+
+        vis.colorScale = d3.scaleLinear()
+            .domain([0,d3.max(vis.stateInfo, d => d[selectedCategory])])
+            .range(['#ffffff','#136D70'])
+
+        vis.bar
+            .enter()
+            .append('rect')
+            .merge(vis.bar)
+            .attr('class', d=> d.state)
+            .attr('y', d => vis.yScale(d[selectedCategory]))
+            .attr('width', vis.xScale.bandwidth())
+            .attr('height', d=> vis.height - vis.yScale(d[selectedCategory]))
+            .attr('fill',  d => {
+                return color = vis.colorScale(d[selectedCategory])
+            })
+            // .on('mouseover', function (event,d){
+            //     d3.select(this)
+            //         .attr('fill','blue')
+            // })
+            .on('mouseover',  (event,d) => {
+                const domElement = event.currentTarget;
+                d3.select(domElement)
+                    .attr('fill','blue')
+            })
+            .on('mouseout', function (event,d){
+                d3.select(this)
+                    .attr('fill',  d => {
+                        return color = vis.colorScale(d[selectedCategory])
+                    })
+            })
+            .transition()
+            .duration(1000)
+            .attr('x', d => vis.xScale(d.state) )
+            .attr('y', d => vis.yScale(d[selectedCategory]))
+            .attr('width', vis.xScale.bandwidth())
+            .attr('height', d=> vis.height - vis.yScale(d[selectedCategory]))
+            .attr('fill',  d => {
+                return color = vis.colorScale(d[selectedCategory])
+            })
+
+
+        vis.xAxisGroup.call(d3.axisBottom(vis.xScale))
+        vis.yAxisGroup.call(d3.axisLeft(vis.yScale))
 
 
 
-
-
-
+        vis.bar.exit().remove()
 
 
 
